@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox Name="txt1" Text="TextBox" TextWrapping="Wrap" Margin="30,28,515,45"/>
+        <TextBox Name="txt2" Text="TextBox" TextWrapping="Wrap" Margin="515,28,30,45"/>
+        <Button Name="move_btn" Content="Move" Margin="320,41,320,335" Click="move_btn_Click"/>
 
     </Grid>
 </Window>
