@@ -27,9 +27,21 @@ namespace OOP_auto
         public void move()
         {
             FuelLevel -= 1;
-            Distance += 10;
-            PneuState -= 0.01;
+            FuelLevel = Math.Max(0, FuelLevel - 1);
+            if (FuelLevel > 0)
+            {
+                Distance += 10;
+                PneuState -= 0.01;
+            }
         }
+        public void refuel()
+        {
+            if (FuelLevel < 100)
+            {
+                FuelLevel += 30;
+            }
+            FuelLevel = Math.Min(100, FuelLevel + 1);
 
+        }
     }
 }

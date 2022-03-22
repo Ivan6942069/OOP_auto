@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace OOP_auto
 {
@@ -22,8 +23,12 @@ namespace OOP_auto
     {
         vehicle auto1;
         vehicle auto2;
+        DispatcherTimer timer;
         public MainWindow()
         {
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 2);
+            timer.Tick += Timer_Tick;
             InitializeComponent();
             auto1 = new vehicle("Skoda");
             auto1.Type = "Osobni auto";
@@ -31,8 +36,17 @@ namespace OOP_auto
 
             auto2 = new vehicle("VW");
             auto2.Type = "Dodavka";
+            auto2.FuelLevel += 100;
             Showvehicle(auto2, txt2);
             // auto.1.brand frerrari
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            auto1.move();
+            auto2.move();
+            Showvehicle(auto1, txt1);
+            Showvehicle(auto2, txt2);
         }
 
         public void Showvehicle(vehicle vehicle, TextBox textbox)
@@ -48,8 +62,13 @@ namespace OOP_auto
 
         private void move_btn_Click(object sender, RoutedEventArgs e)
         {
-            auto1.move();
-            auto2.move();
+            timer.Start();
+        }
+
+        private void refuel_Click(object sender, RoutedEventArgs e)
+        {
+            auto1.refuel();
+            auto2.refuel();
             Showvehicle(auto1, txt1);
             Showvehicle(auto2, txt2);
         }
