@@ -9,8 +9,17 @@
     <Grid>
         <TextBox Name="txt1" Text="TextBox" TextWrapping="Wrap" Margin="30,28,600,83"/>
         <TextBox Name="txt2" Text="TextBox" TextWrapping="Wrap" Margin="600,28,30,83"/>
-        <Button Name="move_btn" Content="Start" Margin="217,43,423,333" Click="move_btn_Click"/>
-        <Button Name="refuel_btn" Content="refuel" Margin="217,121,423,255" Click="refuel_Click"/>
-
+        <Button Name="move_btn" Content="Start" Margin="30,366,610,10" Click="move_btn_Click"/>
+        <Button Name="refuel_btn" Content="refuel" Margin="217,41,423,335" Click="refuel_Click"/>
+        <Button Name="move_bt2n" Content="Start" Margin="610,366,30,10" Click="move_bt2n_Click"/>
+        <Button Name="refuel_btn2" Content="refuel" Margin="413,41,227,335" Click="refuel_Click"/>
+        <Button Name="stop_btn" Content="stop" Margin="217,366,423,10" Click="stop_btn_Click"/>
+        <Button Name="re_tire_btn" Content="retire" Margin="217,121,423,255" Click="re_tire_btn_Click"/>
+        <Button Name="stop_btn2" Content="stop" Margin="413,366,227,10" Click="stop_btn2_Click"/>
+        <Button Name="re_tire_btn2" Content="retire" Margin="413,121,227,255" Click="refuel_Click"/>
+        <Button Name="plus_speed" Content="+ speed" Margin="413,282,227,97"/>
+        <Button Name="minus_speed" Content="- speed" Margin="217,282,422,95"/>
+        <Button Name="plus_speed_btn2" Content="+ speed" Margin="217,202,423,174"/>
+        <Button Name="minus_speed_btn2" Content="- speed" Margin="412,202,227,174"/>
     </Grid>
 </Window>

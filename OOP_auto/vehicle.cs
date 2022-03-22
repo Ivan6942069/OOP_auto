@@ -13,6 +13,7 @@ namespace OOP_auto
         public int FuelLevel { get; set; }
         public int Distance { get; set; }
         public double PneuState { get; set; }
+        public int speed { get; set; }
 
         public vehicle(string brand)
         {
@@ -26,13 +27,7 @@ namespace OOP_auto
         }
         public void move()
         {
-            FuelLevel -= 1;
-            FuelLevel = Math.Max(0, FuelLevel - 1);
-            if (FuelLevel > 0)
-            {
-                Distance += 10;
-                PneuState -= 0.01;
-            }
+        
         }
         public void refuel()
         {
@@ -42,6 +37,27 @@ namespace OOP_auto
             }
             FuelLevel = Math.Min(100, FuelLevel + 1);
 
+        }
+        public void retire()
+        {
+            if (PneuState < 100)
+            {
+                PneuState += 100;
+            }
+            PneuState = Math.Min(100, PneuState + 1);
+        }
+        public void speedup()
+        {
+            if (speed > 0)
+            {
+                FuelLevel -= 1;
+                FuelLevel = Math.Max(0, FuelLevel - 1);
+                if (FuelLevel > 0)
+                {
+                    Distance += 10;
+                    PneuState -= 0.01;
+                }
+            }
         }
     }
 }

@@ -68,9 +68,32 @@ namespace OOP_auto
         private void refuel_Click(object sender, RoutedEventArgs e)
         {
             auto1.refuel();
-            auto2.refuel();
+            //auto2.refuel();
             Showvehicle(auto1, txt1);
-            Showvehicle(auto2, txt2);
+            //Showvehicle(auto2, txt2);
+        }
+
+        private void re_tire_btn_Click(object sender, RoutedEventArgs e)
+        {
+            auto1.retire();
+            //auto2.retire();
+            Showvehicle(auto1, txt1);
+            //Showvehicle(auto2, txt2);
+        }
+
+        private void stop_btn_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+        }
+
+        private void move_bt2n_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Start();
+        }
+
+        private void stop_btn2_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
